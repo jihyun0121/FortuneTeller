@@ -20,29 +20,25 @@ namespace FortuneTeller
             LoadResults();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoadResults()
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            try
+            {
+                string filename = "results.csv";
+                results = File.ReadAllLines(filename).ToList();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"파일을 불러올 수 없습니다.\n{ex.Message}", "파일 없음", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show($"파일에 접근 권한이 없습니다.\n{ex.Message}", "권한 문제", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"알 수 없는 오류가 발생했습니다.\n{ex.Message}", "알 수 없는 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private string GetFortune()
@@ -78,25 +74,55 @@ namespace FortuneTeller
             form.ShowDialog();
         }
 
-        private void LoadResults()
+        private void button1_Click(object sender, EventArgs e)
         {
+            string birthDay = tbBirthday.Text;
+            string birthHour = tbBirthday.Text;
+            string result = GetFortune();
+            string saju = result.Split('|')[0];
+            string message = result.Split('|')[1];
+            tbResult.Text = $"{birthDay} {birthHour}{Environment.NewLine}" +
+                $"{saju}{Environment.NewLine}" +
+                $"{message}";
+            SaveHistory($"{birthDay} {birthHour}|{result}");
+        }
+
+        private void SaveHistory(string history)
+        {
+            string filename = "history.csv";
+            File.AppendAllText(filename, history + Environment.NewLine);
             try
             {
-                string filename = "results.csv";
-                results = File.ReadAllLines(filename).ToList();
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show($"파일을 불러올 수 없습니다.\n{ex.Message}", "파일 없음", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             catch (UnauthorizedAccessException ex)
             {
-                MessageBox.Show($"파일에 접근 권한이 없습니다.\n{ex.Message}", "권한 문제", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"접근 권한이 없습니다.\n{ex.Message}", "권한 문제", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"알 수 없는 오류가 발생했습니다.\n{ex.Message}", "알 수 없는 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -30,12 +30,12 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnResult_Click = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbBirthhour = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbBirthday = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbResult = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.내역불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +51,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnResult_Click);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbBirthhour);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbBirthday);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
@@ -72,12 +72,12 @@
             this.btnResult_Click.UseVisualStyleBackColor = true;
             this.btnResult_Click.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // tbBirthhour
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 21);
-            this.textBox2.TabIndex = 3;
+            this.tbBirthhour.Location = new System.Drawing.Point(124, 138);
+            this.tbBirthhour.Name = "tbBirthhour";
+            this.tbBirthhour.Size = new System.Drawing.Size(125, 21);
+            this.tbBirthhour.TabIndex = 3;
             // 
             // label2
             // 
@@ -88,13 +88,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "태어난 시각(예: 09시 11분 -> 09)";
             // 
-            // textBox1
+            // tbBirthday
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbBirthday.Location = new System.Drawing.Point(124, 59);
+            this.tbBirthday.Name = "tbBirthday";
+            this.tbBirthday.Size = new System.Drawing.Size(125, 21);
+            this.tbBirthday.TabIndex = 1;
+            this.tbBirthday.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -108,7 +108,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.tbResult);
             this.groupBox2.Location = new System.Drawing.Point(393, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(395, 410);
@@ -116,14 +116,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "결과 보기";
             // 
-            // textBox3
+            // tbResult
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 28);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(364, 367);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tbResult.Location = new System.Drawing.Point(15, 28);
+            this.tbResult.Multiline = true;
+            this.tbResult.Name = "tbResult";
+            this.tbResult.Size = new System.Drawing.Size(364, 367);
+            this.tbResult.TabIndex = 0;
+            this.tbResult.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // menuStrip1
             // 
@@ -208,12 +208,12 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbBirthhour;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbBirthday;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnResult_Click;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 내역불러오기ToolStripMenuItem;
