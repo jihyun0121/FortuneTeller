@@ -77,14 +77,14 @@ namespace FortuneTeller
         private void button1_Click(object sender, EventArgs e)
         {
             string birthDay = tbBirthday.Text;
-            string birthHour = tbBirthday.Text;
+            string birthHour = tbBirthhour.Text;
             string result = GetFortune();
             string saju = result.Split('|')[0];
             string message = result.Split('|')[1];
             tbResult.Text = $"{birthDay} {birthHour}{Environment.NewLine}" +
                 $"{saju}{Environment.NewLine}" +
                 $"{message}";
-            SaveHistory($"{birthDay} {birthHour}|{result}");
+            SaveHistory($"{birthDay} {birthHour} | {result}");
         }
 
         private void SaveHistory(string history)
@@ -103,6 +103,20 @@ namespace FortuneTeller
             {
                 MessageBox.Show($"알 수 없는 오류가 발생했습니다.\n{ex.Message}", "알 수 없는 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void LoadHistory(string history)
+        {
+            string birthDay = history.Split('|')[0].Split(' ')[0];
+            string birthHour = history.Split('|')[0].Split(' ')[1];
+            tbBirthday.Text = birthDay;
+            tbBirthhour.Text = birthHour;
+
+            string saju = history.Split('|')[1];
+            string message = history.Split('|')[2];
+            tbResult.Text = $"{birthDay} {birthHour}{Environment.NewLine}" +
+                $"{saju}{Environment.NewLine}" +
+                $"{message}";
         }
 
         private void Form1_Load(object sender, EventArgs e)
